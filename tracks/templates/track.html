@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Track {{titulo}} </title>
+</head>
+<body>
+<section>
+<h1>{{selected_track}}</h1>
+
+<nav>
+	<ul> 
+		{% for track in tracks %}
+		<li>
+			<a href="{{track.get_absolute_url}} ">{{track.title}}</a> {% if track.id == selected_track.id %} <<<---- {% endif %}
+			
+
+		</li> {% endfor %}
+
+	</ul>
+</nav>
+
+	<section class="contenido-item">
+		
+		<p>
+			Title:{{track.title}}
+		</p>
+		<p>
+			Order:{{track.order}}
+		</p>
+		<p>
+			File:{{track.track_file}}
+		</p>
+		<p>
+			Album:{{track.album}}
+		</p>
+		<p>
+			Artist:{{track.artist}}
+		</p>
+		<p>
+			Biography: {{track.artist.biography}}
+		</p>
+
+		<p>
+			Bio:{{bio}}
+		</p>
+	</section>
+
+	<style>
+		.contenido-item
+		{
+			border:1px solid gray;
+			text-align: center;
+			width: 50%;
+		}
+	</style>
+</section>
+	
+</body>
+</html>

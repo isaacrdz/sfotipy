@@ -1,0 +1,54 @@
+
+{% load staticfiles%}
+{% if fav_artist %}
+<section class="banda">
+	<h1>{{fav_artist.first_name}} </h1> 
+	<p>{{fav_artist.biography}}</p>
+</section>
+	
+	
+{% else %}
+Listado de artistas:
+{% for a in artists %}
+ {{a}}
+{% endfor%}
+{%endif%}
+
+
+<br>
+
+<section class="avatar">
+	
+<!-- Version 3 de servir statics -->
+<figure>	
+  <img class="imagen" src="{% static "skeletor.jpg" %}" > 
+<!-- Version 3 de servir statics -->
+</figure>
+</section>
+
+
+<style>
+	
+	.banda
+	{
+		border:1px solid black;
+		width: 50%;
+		margin:0 auto;
+	}
+
+	.imagen
+	{
+		max-width: 250px;
+		width: 100%;
+		margin: 0 auto ;
+
+	}
+
+	.avatar
+	{
+		border:1px red solid;
+		width: 50%;
+		margin: 0 auto;
+
+	}
+</style>
